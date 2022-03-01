@@ -54,7 +54,7 @@
 
 }
 
-.previous-one, 
+.previousOne, 
 .following{
     position: absolute;
     height: 50px;
@@ -67,7 +67,7 @@
     opacity: .7;
 }
 
-.previous-one{
+.previousOne{
     top: .2rem, 50%;
     
 }
