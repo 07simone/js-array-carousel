@@ -1,77 +1,87 @@
+.jumbotron{
+    max-width: 1000px;
+    display: flex;
 
-.grandezza{
-    height: 400px;
 }
 
 
-
-
- *{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+.items{
+    flex-basis: 80%;
 }
 
-.container{
-    height: 100vh;
+.item{
+    height: 100%; 
+    position: relative;
+    display: none; 
+}
+
+.item.active{
+    display: block;;
+} 
+
+.item img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.thums{
+    flex-basis: 20%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     position: relative;
 }
 
-
-.carosello{
-    width: 60%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: block;
+.list-img{
+    height: 100px;
+    filter: brightness(.4) 
 }
 
-.contenuto{
-    height: 60vh;
-    overflow: hidden;
-}
-.contenuto{
-    height: 60vh;
-    overflow: hidden;
-    display: none;
-}
-.contenuto.active{       
-    height: 60vh;
-    overflow: hidden;
-    display: block;
-}
-.contenuto img{
-    width: 100%;
+.list-img img{
     height: 100%;
-    object-fit: cover;
-    /* display: flex;
-    flex-direction: column; */
-} 
-
-.img-dimension{
-    height: 12vh;
-
+    width: 100%;
+}
+.list-img.active{
+    filter: brightness(1);
+    border: 3px solid white;
 }
 
-.previousOne, 
-.following{
+.descrizione{
     position: absolute;
-    height: 50px;
-    width: 50px;
-    background-color: rgb(226, 221, 221);
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    cursor: pointer;
-    opacity: .7;
+    bottom: 1rem;
+    right: 1rem;
+    text-align: end;
 }
 
-.previousOne{
-    top: .2rem, 50%;
-    
+
+.thums .previus,
+.thums .following{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+
+.previus{
+    top:1rem;
 }
 
 .following{
-    right: .2rem;
+    bottom:1rem;
 }
+
+.previus::after,
+.following::after{
+    content: "";
+    width: 30px;
+    height: 30px;
+    display: block;
+    border-radius: 50%;
+    background-color: rgb(16, 172, 42);
+    cursor: pointer;
+}
+
+
+
