@@ -73,7 +73,7 @@ const text = [
     const thumsElement = document.querySelector(".jumbotron .thums")
     thumsElement.innerHTML += thumsContent;
 
-    let activeElement = 1;
+    let activeElement = 0;
 
     document.getElementsByClassName("item")[activeElement].classList.add("active");
     document.getElementsByClassName("thums")[activeElement].classList.add("active"); 
@@ -86,14 +86,14 @@ prev.addEventListener("click", function(){
 
     
     if (activeElement === 0){
-        activeElement = images.length - 1;
+        activeElement = images.length -1;
     } else {
         activeElement --;
     }
 
     document.getElementsByClassName("item")[activeElement].classList.add("active");
     document.getElementsByClassName("thums")[activeElement].classList.add("active");
-})
+});
 
 
 const successiva = document.querySelector(".following")
