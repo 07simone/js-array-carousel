@@ -73,14 +73,15 @@ const text = [
     const thumsElement = document.querySelector(".jumbotron .thums")
     thumsElement.innerHTML += thumsContent;
 
-    let activeElement = 0;
+    let activeElement = 1;
 
     document.getElementsByClassName("item")[activeElement].classList.add("active");
     document.getElementsByClassName("thums")[activeElement].classList.add("active"); 
     
 
-const prev = document.querySelector(".previus");
-prev.addEventListener("click", function(){
+
+
+function previus(){
     document.getElementsByClassName("item")[activeElement].classList.remove("active");
     document.getElementsByClassName("thums")[activeElement].classList.remove("active");
 
@@ -93,27 +94,24 @@ prev.addEventListener("click", function(){
 
     document.getElementsByClassName("item")[activeElement].classList.add("active");
     document.getElementsByClassName("thums")[activeElement].classList.add("active");
-});
+}
 
 
-const successiva = document.querySelector(".following")
-successiva.addEventListener("click", function(){
+
+function following(){
     document.getElementsByClassName("item")[activeElement].classList.remove("active");
     document.getElementsByClassName("thums")[activeElement].classList.remove("active");
 
     
-    if (activeElement === images.length - 1){
-        activeElement = 0
+    if (activeElement === images.length -1){
+        activeElement = 0;
     } else {
         activeElement ++;
     }
-    
+
     document.getElementsByClassName("item")[activeElement].classList.add("active");
     document.getElementsByClassName("thums")[activeElement].classList.add("active");
-})
-
-
-
+}
 
 
 
